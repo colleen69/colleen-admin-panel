@@ -1,0 +1,442 @@
+@import 'reset';
+
+$color-black: #000;
+$color-white: #fff;
+$color-pink: #FF00FF;
+$color-orange: #F15A24;
+$color-blue: #29ABE2;
+$color-green: #8CC63F;
+$font-stack: 'Open Sans', sans-serif;
+
+body {
+    font-family: $font-stack;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.toogle, [id^="drop"] {
+    display: none;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 20%;
+        background-color: $color-black;
+        position: fixed;
+        height: 100vh;
+        overflow: auto;
+        line-height:3;
+        position: relative;
+        text-align: center;
+        float: left;
+}     
+    
+li a {
+    display: block;
+    color: $color-white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid $color-white;
+}
+
+li a:hover:not(.active) {
+    background-color: $color-white;
+    color: $color-black;
+    }
+}
+
+.logo-dk  {
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+}
+/* table */
+
+table {
+	width: 70%;
+	border-collapse:separate;
+	border-spacing: 0;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+}
+
+th, td {
+    padding: 6px 15px;
+}
+
+th {
+    background: $color-black;
+    text-align: center;
+    color: $color-white;   
+}
+
+td {
+	border-right: 1px solid $color-black;
+	border-bottom: 1px solid $color-black;
+}
+
+td:first-child  {
+	border-left: 1px solid $color-black;
+}
+
+tr:nth-child(even) td {
+    background-color: $color-white;
+}
+
+.row-btn {
+	text-align: center;
+    padding-bottom: 15px;
+}
+
+.btn-xs {
+    font-size: 17px;
+    width: 35px;
+    padding: 0;
+    text-decoration: none;
+    border: 1px solid $color-black;
+    background-color: $color-white;
+}
+
+#save {
+    @extend .btn-xs;
+    width: 65px;
+    font-size: 15px;   
+}
+
+/* PIE CHART 2 */
+
+.pie-container {
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart {
+    width: 450px;
+    height: auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.h2 {
+	position: absolute;
+	z-index: 1;	
+	color: $color-white;
+    font-size: 20px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+text.ct-label {
+    display: none;
+}
+
+#chart1 .ct-series-a .ct-slice-pie:nth-child(1) {
+fill: $color-blue;
+}
+
+#chart1 .ct-series-b .ct-slice-pie:nth-child(1) {
+fill: $color-orange;
+}
+
+#chart2 .ct-series-a .ct-slice-pie:nth-child(1) {
+fill: $color-green;
+}
+
+#chart2 .ct-series-b .ct-slice-pie:nth-child(1) {
+fill: $color-blue;
+}
+
+#chart3 .ct-series-a .ct-slice-pie:nth-child(1) {
+fill: $color-blue;
+}
+
+#chart3 .ct-series-b .ct-slice-pie:nth-child(1) {
+fill: $color-pink;
+}
+
+/* LIGHT DARK BUTTON THEME*/
+
+.theme-btn-container {
+    margin-top: 3%;
+    width: 80%;
+    float: left;
+    text-align: center;
+}
+
+.light-theme-btn {
+    background-color: $color-pink;
+    color: $color-white;
+    text-decoration: none;
+    padding: 5px 25px;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    font-weight: 100;  
+}
+
+.dark-theme-btn {
+    @extend .light-theme-btn;
+    margin-left: 20px;
+    background-color: $color-orange;
+    color: $color-black;      
+}
+
+.hidden-dk {
+    display: none;
+}
+
+/*MEDIA QUERYS*/
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+.hidden-md {
+    display: none;
+}
+
+.display-md {
+    display: block;
+}
+    
+.clearfix {
+	clear: both;
+}
+    
+label {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    height: 120px;
+}
+    
+i.fa.fa-bars {
+    line-height: 70px;
+    padding: 25px;
+    padding-left: 40px;
+    font-size: 30px;
+    
+} 
+
+.logo-md {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    z-index: 1;
+}
+
+[id^="drop"]:checked+ul {
+    display: block;	
+    position: absolute;
+    background-color: #fff;
+    z-index: 2;
+    top: 3;
+    left: 0px;
+    width: 50%;
+    line-height: 100px;
+}
+     
+nav { 
+    
+li a {
+    color: #000;
+    font-size: 20px;
+}
+
+ul li {
+    float: none;
+    border-bottom: 1px solid #000;
+    width: 100%;		
+}
+    
+li a:hover:not(.active) {
+    background-color: #000;
+    color: #fff; }    
+
+ul li:last-child {
+    border: none;
+}    
+    }
+    
+ /*PIE*/
+    
+.pie-container {
+    width: 100%;
+    height: 350px;
+}
+    
+.ct-chart {
+    height: 210px; 
+}	 
+    
+table {
+    width: 100%;
+    padding: 0 20px;
+}
+ 
+th {
+  padding: 15px 15px;
+}
+    
+td {
+  padding: 30px 15px;
+}
+
+th {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+tr {
+    font-size: 20px;    
+}
+    
+.theme-btn-container {
+    width: 100%;
+    margin: 50px 0;
+    }  
+}
+
+@media screen and (min-width: 0px) and (max-width: 639px) {
+.hidden-sm {
+    display: none;
+}
+
+.display-sm {
+    display: block;
+}
+    
+label {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    height: 80px;
+}
+    
+i.fa.fa-bars {
+    line-height: 30px;
+    padding: 25px;
+    padding-left: 20px;
+    font-size: 20px;
+    
+} 
+
+.logo-md {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+}
+    
+.logo-md img {
+    width: 200px;    
+}
+    
+[id^="drop"]:checked+ul {
+    display: block;	
+    position: absolute;
+    background-color: #fff;
+    z-index: 2;
+    top: 3;
+    left: 0px;
+    width: 100%;
+    line-height: 65px;
+}
+    
+nav { 
+    
+li a {
+    color: #000;
+    font-size: 18px;
+}
+
+ul li {
+    float: none;
+    border-bottom: 1px solid #000;
+    width: 100%;		
+}
+    
+li a:hover:not(.active) {
+    background-color: #000;
+    color: #fff; }    
+
+ul li:last-child {
+    border: none;
+}    
+    }   
+    
+ /*PIE*/
+.pie-container {
+    width: 100%;
+    height: 180px;
+}
+    
+.ct-chart {
+    height: 110px; 
+}
+    
+.h2 {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+    
+ /*Table*/   
+    
+table {
+    width: 100%;
+    padding: 0 0px;
+}
+    
+th {
+    padding: 15px 5px;
+    line-height: 25px;
+} 
+    
+td {
+    padding: 15px 5px;
+    line-height: 25px;
+}
+    
+tr {
+    font-size: 15px;    
+}
+    
+/*THEME BTN*/
+  
+.theme-btn-container {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.light-theme-btn {
+    background-color: $color-pink;
+    color: $color-white;
+    text-decoration: none;
+    padding: 3px 15px;
+    margin-right: 14px;
+    letter-spacing: 1px;
+    font-size: 15px; 
+}
+
+.dark-theme-btn:nth-child(2) {
+    margin-left: 14px;
+    background-color: $color-orange;
+    color: $color-black;      
+    }    
+}

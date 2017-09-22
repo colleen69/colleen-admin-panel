@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colleen Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="icons/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+</head>
+<body>
+
+<nav>
+     <div class="logo-md hidden-dk display-md display-sm">
+        <img src="img/lightdark-logo-md.png"></div>
+    
+    <label for="drop" class="toggle hidden-dk display-md display-sm"><i class="fa fa-bars"></i></label>
+    <input type="checkbox" id="drop">
+    
+	 <ul class="vertical-menu display-dk hidden-md hidden-sm">
+         <div class="logo-dk display-dk hidden-md hidden-sm"><img src="img/dark.png"></div>
+
+		 <li><a href="#">SUBJECT</a></li> 
+		 <li><a href="#">STUDENTS</a></li>
+		 <li><a href="#">TEACHES</a></li>
+		 <li><a href="#">GRADES</a></li>
+		 <li><a href="#">TEACHES</a></li>
+		 <li><a href="#">CALENDER</a></li>
+		 <li><a href="#">ACCOUNTS</a></li>
+ 	</ul>
+    <div class="clearfix"></div>
+</nav>
+  
+<!-- PIE CHART -->
+    
+<div class="pie-container">   
+    <div class="chart1 chart">
+		<h2 class="h2">% Year <br>Completed</h2>
+        <div class="ct-chart ct-golden-section" id="chart1"></div>
+    </div>
+
+    <div class="chart2 chart">
+        <h2 class="h2">% student <br>Pass Rate</h2>
+        <div class="ct-chart ct-golden-section" id="chart2"></div>
+    </div>
+
+    <div class="chart3 chart"> 
+        <h2 class="h2">% of<br>attendence</h2>
+        <div class="ct-chart ct-golden-section" id="chart3"></div>
+    </div> 
+</div>  
+<div id="app">
+    <link rel="stylesheet" v-bind:href="current_template.value">
+    
+<table>
+	<thead>
+        <tr>
+            <template v-for="value in tableHeader(info)">
+                <th>{{ value }}</th>
+            </template>
+        </tr>
+    </thead>
+
+    <tbody>
+		<template v-for="value in info">
+        	<tr>
+                <td><div contenteditable="true">{{ value.Name }}</div></td>
+                <td><div contenteditable="true">{{ value.Subject }}</div></td>
+                <td><div contenteditable="true">{{ value.Contact }}</div></td>
+                <td><div contenteditable="true">{{ value.Medical }}</div></td>
+		</template>
+        
+        <div class="row-btn"> 
+            <button value="Save" id="save">Save</button>&nbsp;&nbsp;
+			
+			<button class="btn btn-danger btn-xs" @click="removeRow(info, value)">-</button>&nbsp;&nbsp;
+        	<button class="btn btn-primary btn-xs" @click="addRow(info)">+</button>
+		</div>
+    </tbody>
+	
+</table>    
+    <div class="theme-btn-container">
+      <template v-for="template in templates">
+            <a class="dark-theme-btn" v-on:click="setTemplate(template.id)">{{ template.name }}</a>
+      </template>
+    </div>       
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+	<script src="js/main.js"></script>  
+    
+</body>
+</html>

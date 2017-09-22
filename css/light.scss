@@ -1,0 +1,12 @@
+@import 'style.scss';
+
+.light-theme-btn {
+    background-color: $color-orange;
+    color: $color-black;
+}
+
+.light-theme-btn:nth-child(2) {
+    margin-left: 20px;
+    background-color: $color-pink;
+    color: $color-white;      
+}
